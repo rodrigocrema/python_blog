@@ -1,13 +1,13 @@
-<html>
-<head>
-<link rel="alternate" type="application/rss+xml" title="Ultimos
-artigos do Alatazan - livro" href="/rss/ultimos/" />
-</head>
-<body>
-<h1>Meu blogg</h1>
+{% extends "base.html" %} 
+{% block conteudo %} 
 {% for artigo in latest %}
-<h2>{{ artigo.titulo }}</h2>
-{{ artigo.conteudo }}
-{% endfor %}
-</body>
-</html>
+<div class="artigo">
+	<a	href="{% url blog.views.artigo artigo_id=artigo.id %}">
+		<h2>{{ artigo.titulo }}</h2>
+	</a>
+	<div class="conteudo">Publicado há {{ artigo.publicacao|timesince }}<br />
+	{{ artigo.conteudo }}
+	</div>
+</div>
+{% endfor %} 
+{% endblock %}
