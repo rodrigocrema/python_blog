@@ -1,5 +1,13 @@
 {% extends "base.html" %} 
 {% block conteudo %} 
+=======
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="Ultimos
+artigos do Alatazan" href="/rss/ultimos/" />
+</head>
+<body>
+<h1>Meu blog</h1>
 {% for artigo in latest %}
 <div class="artigo">
 	<a	href="{% url blog.views.artigo artigo_id=artigo.id %}">
