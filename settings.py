@@ -73,9 +73,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',    
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -103,3 +104,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rodrigo.crema.dts@gmail.com'
+EMAIL_HOST_PASSWORD = 'newoverture3'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
